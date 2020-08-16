@@ -27,4 +27,23 @@ def cargar_moviescasting (archivo:str)->list:
         linea = archivo.readline();
     archivo.close    
     return moviecasting
+ def buenas_peliculas(moviedetails: list, moviecasting: list, director_name: str)->tuple:
+     buenas = 0
+     promedio = 0
+     for b in moviecasting:
+        if b['director_name']==director_name:                        
+        for a in moviedetails:
+            if a['vote_average']>= 6:
+                buenas+=1
+                promedio += a['vote_average']
+                promedio = promedio/buenas
+                             
+     resultado = (buenas, promedio)             
+     return resultado
+                             
+                             
+                             
+                       
+                             
+     
     
