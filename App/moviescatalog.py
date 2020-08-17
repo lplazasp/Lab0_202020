@@ -37,7 +37,7 @@ def cargar_moviescasting (archivo:str)->list:
             pos = moviecasting.index(b)
             numero = moviedetails[pos]
             if numero['vote_average']>= 6:
-                promedio += numero['vote_average']
+                promedio += float(numero['vote_average'])
                 buenas+=1
      promediofinal = promedio/buenas
                    
