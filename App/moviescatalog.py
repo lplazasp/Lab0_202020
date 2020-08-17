@@ -34,11 +34,14 @@ def cargar_moviescasting (archivo:str)->list:
      for b in moviecasting:
         if b['director_name']==director_name: 
             peliculas_d+=1
-            promedio += a['vote_average']
-            promedio = promedio/peliculas_d
-            for a in moviedetails:
+            
+            for a in b:
                 if a['vote_average']>= 6:
-                    buenas+=1
+                promedio += a['vote_average']
+                buenas+=1
+     promedio = promedio/peliculas_d
+                   
+                             
                 
                              
      resultado = (buenas, promedio)             
