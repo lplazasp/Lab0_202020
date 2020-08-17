@@ -36,21 +36,22 @@ def cargar_moviescasting (archivo:str)->list:
     return moviecasting
 
 
+#lol
+
 def buenas_peliculas(moviedetails: list, moviecasting: list, director_name: str)->tuple:
      buenas = 0
      promedio = 0
-     peliculas_d = 0                        
+     promediofinal = 0                                              
      for b in moviecasting:
-        if b['director_name']==director_name: 
-            peliculas_d+=1
-            promedio += a['vote_average']
-            promedio = promedio/peliculas_d
-            for a in moviedetails:
-                if a['vote_average']>= 6:
-                    buenas+=1
-                
-                             
-     resultado = (buenas, promedio)             
+        if b['director_name']==director_name:
+            pos = moviecasting.index(b)
+            numero = moviedetails[pos]
+            if numero['vote_average']>= 6:
+                promedio += float(numero['vote_average'])
+                buenas+=1
+     promediofinal = promedio/buenas
+                   
+     resultado = (buenas, promediofinal)             
      return resultado
                              
 cargar_moviescasting("Data/themoviesdb/AllMoviesDetailsCleaned.csv")                          
