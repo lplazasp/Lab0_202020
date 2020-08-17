@@ -30,21 +30,17 @@ def cargar_moviescasting (archivo:str)->list:
  def buenas_peliculas(moviedetails: list, moviecasting: list, director_name: str)->tuple:
      buenas = 0
      promedio = 0
-     peliculas_d = 0                        
+     promediofinal = 0                                              
      for b in moviecasting:
         if b['director_name']==director_name: 
-            peliculas_d+=1
             
             for a in b:
                 if a['vote_average']>= 6:
                 promedio += a['vote_average']
                 buenas+=1
-     promedio = promedio/peliculas_d
+     promediofinal = promedio/buenas
                    
-                             
-                
-                             
-     resultado = (buenas, promedio)             
+     resultado = (buenas, promediofinal)             
      return resultado
                              
                              
